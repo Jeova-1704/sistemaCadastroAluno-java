@@ -28,27 +28,32 @@ public class Program {
                 System.out.println("Informe os dados dos alunos abaixo:");
 
                 System.out.println("Nome:");
-                String name = sc.next();
+                String name = sc.nextLine();
+                sc.nextLine();
                 System.out.println("Idade:");
-                Integer idade = sc.nextInt();
+                int idade = sc.nextInt();
                 System.out.println("Matricula:");
                 int matricula = sc.nextInt();
-
                 Aluno aluno = new Aluno(name, idade, matricula);
 
                 cadastrarAluno.adicionarAluno(aluno);
 
             } else if (escolha == 2) {
+                System.out.println("==========================================================================");
                 System.out.println("Por favor infome a matricula do aluno para podermos deletar ele do nosso sistama:");
                 int matricula = sc.nextInt();
                 cadastrarAluno.removerALuno(matricula);
+                System.out.println("==========================================================================");
 
             } else if (escolha == 3) {
+                System.out.println("==========================================================================");
                 System.out.println("Informe a matricula do aluno que deseja buscar no sistema:");
                 int matricula = sc.nextInt();
                 cadastrarAluno.buscarAluno(matricula);
+                System.out.println("==========================================================================");
 
             } else if (escolha == 4) {
+                System.out.println("==========================================================================");
                 System.out.println("Informe os dados pedidos do aluno para que possa atualizar ele no sistema:");
                 System.out.println("Matricula:");
                 int matricula = sc.nextInt();
@@ -57,10 +62,13 @@ public class Program {
                 System.out.println("Idade:");
                 int idade = sc.nextInt();
                 cadastrarAluno.atualizarAluno(matricula, name, idade);
+                System.out.println("==========================================================================");
 
             } else if (escolha == 5) {
+                System.out.println("==========================================================================");
                 System.out.println("Listando todos os alunos cadastrados no sistema:");
                 cadastrarAluno.listarTodosAlunos();
+                System.out.println("==========================================================================");
 
             } else if (escolha == 6) {
                 System.out.println("Programa encerrado.");
@@ -69,8 +77,10 @@ public class Program {
             } else {
                 System.out.println("Por favor faça uma escolha válida.");
             }
+            System.out.println();
 
         }
+
 
     }
 }
