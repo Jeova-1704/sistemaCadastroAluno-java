@@ -40,42 +40,64 @@ public class Program {
 
             } else if (escolha == 2) {
                 System.out.println("==========================================================================");
-                System.out.println("Por favor infome a matricula do aluno para podermos deletar ele do nosso sistama:");
-                int matricula = sc.nextInt();
-                cadastrarAluno.removerALuno(matricula);
+                if(cadastrarAluno.verificarLista()) {
+                    System.out.println("Por favor infome a matricula do aluno para podermos deletar ele do nosso sistama:");
+                    int matricula = sc.nextInt();
+                    cadastrarAluno.removerALuno(matricula);
+                } else {
+                    System.out.println("Nenhum aluno cadastrado no sistema para ser removido.");
+                }
                 System.out.println("==========================================================================");
 
             } else if (escolha == 3) {
                 System.out.println("==========================================================================");
-                System.out.println("Informe a matricula do aluno que deseja buscar no sistema:");
-                int matricula = sc.nextInt();
-                cadastrarAluno.buscarAluno(matricula);
+                if (cadastrarAluno.verificarLista()) {
+                    System.out.println("Informe a matricula do aluno que deseja buscar no sistema:");
+                    int matricula = sc.nextInt();
+                    cadastrarAluno.buscarAluno(matricula);
+                } else {
+                    System.out.println("Nenhum aluno cadastrado no sistema.");
+                }
                 System.out.println("==========================================================================");
 
             } else if (escolha == 4) {
                 System.out.println("==========================================================================");
-                System.out.println("Informe os dados pedidos do aluno para que possa atualizar ele no sistema:");
-                System.out.println("Matricula:");
-                int matricula = sc.nextInt();
-                System.out.println("Nome:");
-                String name = sc.next();
-                System.out.println("Idade:");
-                int idade = sc.nextInt();
-                cadastrarAluno.atualizarAluno(matricula, name, idade);
+                if (cadastrarAluno.verificarLista()) {
+                    System.out.println("Informe os dados pedidos do aluno para que possa atualizar ele no sistema:");
+                    System.out.println("Matricula:");
+                    int matricula = sc.nextInt();
+                    System.out.println("Nome:");
+                    String name = sc.next();
+                    System.out.println("Idade:");
+                    int idade = sc.nextInt();
+                    cadastrarAluno.atualizarAluno(matricula, name, idade);
+                } else {
+                    System.out.println("Nenhum aluno cadastrado no sistema para ser atualizado");
+                }
                 System.out.println("==========================================================================");
+
 
             } else if (escolha == 5) {
                 System.out.println("==========================================================================");
-                System.out.println("Listando todos os alunos cadastrados no sistema:");
-                cadastrarAluno.listarTodosAlunos();
+                if (cadastrarAluno.verificarLista()) {
+                    System.out.println("Listando todos os alunos cadastrados no sistema:");
+                    cadastrarAluno.listarTodosAlunos();
+                } else {
+                    System.out.println("Nenhum aluno cadastrado no sistema para ser listado.");
+                }
                 System.out.println("==========================================================================");
 
             } else if (escolha == 6) {
+                System.out.println("==========================================================================");
                 System.out.println("Programa encerrado.");
+                System.out.println("==========================================================================");
                 break;
 
             } else {
+                System.out.println("==========================================================================");
                 System.out.println("Por favor faça uma escolha válida.");
+                System.out.println("==========================================================================");
+
             }
             System.out.println();
 
